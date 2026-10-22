@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Исправлен вывод накопившихся результатов после остановки: экранный журнал замирает, скорость обнуляется, статус не дублируется. Чтение Google Диска вынесено в отдельные процессы: до 8 файлов одновременно, прерывание зависшего чтения после 90 секунд без данных, снижение параллельности и одна повторная попытка. Сохраняются подсчёт файлов и продолжение загрузки."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Настройки структуры папок с шаблонами района и адреса. Автоматическое сохранение сессии при закрытии и обновлении, восстановление таблицы, путей и выполненной загрузки без повторного подсчёта. Резервная проверка и скачивание обновлений при HTTP 403 API GitHub; проверка SHA256 сохранена."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'

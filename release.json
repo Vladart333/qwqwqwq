@@ -1,6 +1,6 @@
 {
-  "version": "1.0.14",
-  "archive_url": "https://sdmntpritalynorth.oaiusercontent.com/files/00000000-ec30-8246-8d22-adcc8b46aba0/raw?se=2026-10-22T16%3A52%3A52Z&sp=r&sv=2026-02-06&sr=b&scid=dba84eba-953e-4d42-9d29-adbedcd3ff8e&skoid=ba81670d-b682-4d2d-9682-ac0ffdfb3fa1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-22T07%3A30%3A34Z&ske=2026-10-23T07%3A30%3A34Z&sks=b&skv=2026-02-06&sig=t8OmPNjjgFR8aO7XZZYDukqSOK3bHsWivPE1FnXUqIc%3D",
-  "archive_sha256": "50140dadb52db9564f215f66d363844ed305bf423291965d64644fc356cd23f1",
-  "installer_sha256": "46553abe8dd247f74cfcfad919f61ac40c9be0b1e979bbf3513edea3ebec04a1"
+  "version": "1.0.15",
+  "archive_url": "https://sdmntpritalynorth.oaiusercontent.com/files/00000000-fe58-8246-8506-72dc5df32b1e/raw?se=2026-10-22T23%3A12%3A50Z&sp=r&sv=2026-02-06&sr=b&scid=17da2664-3b7c-48af-a471-9f0faf45b69a&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-22T08%3A36%3A37Z&ske=2026-10-23T08%3A36%3A37Z&sks=b&skv=2026-02-06&sig=Vr1n5RIaIH0O03pg3S4vCwaFwf4lko8JyFqFk7c1mNY%3D",
+  "archive_sha256": "946937fc19ad4e97b714f8c719699084bed91242567a7587a6f6c887e42fe834",
+  "installer_sha256": "d7daec49817bd21f387743991d4dc36671c056679ea10c0e1c024e43fcc500d5"
 }
