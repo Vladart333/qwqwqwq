@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Оптимизация нагрузки: щадящий режим до 8 домов, поиск и подсчёт до 4 потоков, повторное использование списков каталогов, быстрый расчёт прогресса, ограниченный экранный журнал и фоновый приоритет чтения."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Исправлена кнопка обновлений: ручное нажатие во время фоновой проверки не теряется, виден статус запроса, проверка доступна при загрузке фотографий, при ошибке сети предлагается открыть страницу скачивания."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
