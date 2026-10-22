@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Настройки структуры папок с шаблонами района и адреса. Автоматическое сохранение сессии при закрытии и обновлении, восстановление таблицы, путей и выполненной загрузки без повторного подсчёта. Резервная проверка и скачивание обновлений при HTTP 403 API GitHub; проверка SHA256 сохранена."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "В настройках добавлена галочка работы без списка Excel. Выберите папку и нажмите Подгрузить фотографии: программа обработает фото в корне и всех подкаталогах с любыми названиями. Поддерживаются параллельность, остановка, продолжение и сохранение сессии без повторного подсчёта."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
