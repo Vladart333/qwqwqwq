@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "В настройках добавлена галочка работы без списка Excel. Выберите папку и нажмите Подгрузить фотографии: программа обработает фото в корне и всех подкаталогах с любыми названиями. Поддерживаются параллельность, остановка, продолжение и сохранение сессии без повторного подсчёта."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Убрано ожидание полного списка: фото подгружаются порциями по мере обнаружения. Ускорен обход каталогов через метаданные DirEntry. Добавлены живые счётчики найденных и готовых фотографий во время обхода; сохранены остановка, продолжение и ранее подсчитанные файлы."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
