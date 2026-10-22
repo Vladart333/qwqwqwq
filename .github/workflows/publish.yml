@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Автоматическая проверка обновлений при запуске и каждый час; небольшое уведомление; до 1000 параллельных адресов, по умолчанию 5."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Оптимизация нагрузки: щадящий режим до 8 домов, поиск и подсчёт до 4 потоков, повторное использование списков каталогов, быстрый расчёт прогресса, ограниченный экранный журнал и фоновый приоритет чтения."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
@@ -85,7 +85,7 @@ jobs:
           assets = {a['name']: a['id'] for a in release['assets']}
           payload = get(base + '/releases/assets/' + str(assets[name]), True)
           assert payload[:2] == b'MZ'
-          assert hashlib.sha256(payload).hexdigest() == '815f2696269c10b47056638fa274ae0ed0c5e9d258cd99364020dcc301baf0ba'
+          assert hashlib.sha256(payload).hexdigest() == json.loads(pathlib.Path('release.json').read_text())['installer_sha256']
           checksums = get(base + '/releases/assets/' + str(assets['SHA256SUMS.txt']), True).decode('utf-8-sig')
           assert hashlib.sha256(payload).hexdigest().lower() in checksums.lower()
           print('Anonymous download and SHA256 verified')
