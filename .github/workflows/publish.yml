@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Добавлена галочка сохранения выбранной общей папки районов между запусками. Снятие галочки очищает сохранённый путь."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Исправлены живые счётчики файлов и результаты по домам. Остановка отменяет синхронное чтение Windows и не затирается входящими сообщениями. Сохранена галочка запоминания папки."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
