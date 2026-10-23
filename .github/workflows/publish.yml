@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Исправлено сохранение сессии при закрытии и обновлении во время анимации прогресса. Ошибка сохранения больше не блокирует закрытие и автосохранение. Для загрузки по таблице возвращено примерное оставшееся время по темпу адресов, без ожидания полного подсчёта файлов."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Снят отдельный предел 8 читаемых файлов в обычном режиме. Число параллельных чтений теперь соответствует настройке домов (1–1000), по одному файлу на активный дом. Щадящий режим сохраняет предел 8. Для изменения: остановите загрузку, отключите щадящий режим, задайте число домов и нажмите Продолжить."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
