@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Снят отдельный предел 8 читаемых файлов в обычном режиме. Число параллельных чтений теперь соответствует настройке домов (1–1000), по одному файлу на активный дом. Щадящий режим сохраняет предел 8. Для изменения: остановите загрузку, отключите щадящий режим, задайте число домов и нажмите Продолжить."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Добавлена сохраняемая галочка подготовки миниатюр FastStone 8.5 после подгрузки фотографий и выбор FSViewer.exe. Программа запускает встроенное сканирование выбранных папок с подпапками; итоговое число миниатюр видно в окне FastStone. Кнопка Остановить отменяет сканирование, не закрывая просмотрщик. FastStone устанавливается отдельно. Во время подготовки не управляйте его окном. Проверены реальное сканирование и отмена в Windows, включая установленный exe."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
