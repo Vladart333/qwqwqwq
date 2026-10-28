@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Добавлена сохраняемая галочка подготовки миниатюр FastStone 8.5 после подгрузки фотографий и выбор FSViewer.exe. Программа запускает встроенное сканирование выбранных папок с подпапками; итоговое число миниатюр видно в окне FastStone. Кнопка Остановить отменяет сканирование, не закрывая просмотрщик. FastStone устанавливается отдельно. Во время подготовки не управляйте его окном. Проверены реальное сканирование и отмена в Windows, включая установленный exe."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Автоматическая подготовка миниатюр: FastStone запускается при необходимости, результаты подтверждаются автоматически, оставшиеся окна прошлых сканирований больше не блокируют повторный запуск. Убрана ошибочная проверка версии по заголовку окна. Проверены автозапуск, повторные проходы, восстановление после оставленных диалогов и отмена в Windows, включая установленный exe. Требуется установленный FastStone и активный разблокированный рабочий стол. Галочка подготовки миниатюр остаётся необязательной."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
