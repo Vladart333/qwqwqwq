@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Исправлен поиск района: Филимонковское и Филимонковский распознаются как варианты названия папки. Точное совпадение приоритетно; адреса не подменяются и поиск не переходит в другой район. После установки повторно нажмите Найти папки. Исходную таблицу для этого района менять не нужно."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Настройки → Приоритет скорости: Низкий — прежнее фоновое чтение; Обычный — стандартный приоритет; Высокий — повышенный приоритет потоков чтения и до четырёх фото на дом при свободном лимите. Изменение сохраняется для пользователя. Для текущей загрузки: остановить, изменить настройку и продолжить."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
