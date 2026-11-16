@@ -1,6 +1,6 @@
 {
-  "version": "1.0.25",
-  "archive_url": "https://sdmntprnortheu.oaiusercontent.com/files/00000000-fd44-81f4-8ce4-a3bfb007fb88/raw?se=2026-11-16T07%3A44%3A41Z&sp=r&sv=2026-06-06&sr=b&scid=477c66e3-4a73-4842-86b2-25fac1768ee2&skoid=697a5987-0cd9-4222-b5b8-500b90fa271b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-15T17%3A34%3A21Z&ske=2026-11-16T17%3A34%3A21Z&sks=b&skv=2026-06-06&sig=FxZrLu6INtJaXUTOTdKiwMUufOYMg3eu%2BMi/rRfsowc%3D",
-  "archive_sha256": "2ba9e9472ad6c513acbfc463e93d93a4046be6adb8192b48fa47f4a2da2258b6",
-  "installer_sha256": "153adf00c904e336ed469f4910e5caee1fe3f8bb006fe9d54d421d71b714b984"
+  "version": "1.0.27",
+  "archive_url": "https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-2390-8210-80a9-0f26417cefd8/raw?se=2026-11-16T13%3A57%3A27Z&sp=r&sv=2026-06-06&sr=b&scid=9caef455-68c0-4e59-9a80-4da079fbaa52&skoid=697a5987-0cd9-4222-b5b8-500b90fa271b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-16T04%3A44%3A13Z&ske=2026-11-17T04%3A44%3A13Z&sks=b&skv=2026-06-06&sig=dwMi8K6h7rOCSyLti630tGwjVssduagLnVmIssvBbtU%3D",
+  "archive_sha256": "dcc5843070ef7646794300ce8d1dd665b4ea04b743145a4986096cc18e6654df",
+  "installer_sha256": "13c2513bf91f15943177f999de74e1dfe65f72bed95748376a5df62365778905"
 }
