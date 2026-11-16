@@ -61,7 +61,7 @@ jobs:
           RELEASE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           version=$(cat version.txt)
-          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Настройки → Приоритет скорости: Низкий — прежнее фоновое чтение; Обычный — стандартный приоритет; Высокий — повышенный приоритет потоков чтения и до четырёх фото на дом при свободном лимите. Изменение сохраняется для пользователя. Для текущей загрузки: остановить, изменить настройку и продолжить."
+          gh release create "v$version" release-files/*.exe release-files/SHA256SUMS.txt --target "$RELEASE_SHA" --title "Drive Photo Loader $version" --notes "Исправлена блокировка новых чтений, пока Windows завершает предыдущий процесс Google Диска. Программа автоматически ждёт до 60 секунд и продолжает после освобождения процесса. Ожидание видно в прогрессе и отменяется кнопкой Остановить. При длительной блокировке загрузка приостанавливается с сохранением прогресса; остальные фото не получают ошибки из-за этой блокировки. После освобождения чтения нажмите Продолжить."
       - name: Verify anonymous update download
         run: |
           python - <<'PY'
